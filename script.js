@@ -68,18 +68,15 @@ const addMemeber = () => {
     thChange.classList = 'table__change';
     thPhone.classList = 'table__tr';
     thChange.textContent = 'Change';
-    tr.append(thName);
-    tr.append(thSurname);
-    tr.append(thEmail);
-    tr.append(thPhone);
+    tr.append(thName, thSurname, thEmail, thPhone);
     thPhone.append(thChange);
 
     const changeTr = () => {
         if (isValid() === null) {
-            thName.textContent = `${USERINFO.name.value}`;
-            thSurname.textContent = `${USERINFO.surname.value}`;
-            thEmail.textContent = `${USERINFO.email.value}`;
-            thPhone.textContent = `${USERINFO.phone.value}`;
+            memeber.name = thName.textContent = `${USERINFO.name.value}`;
+            memeber.surname = thSurname.textContent = `${USERINFO.surname.value}`;
+            memeber.email = thEmail.textContent = `${USERINFO.email.value}`;
+            memeber.phone = thPhone.textContent = `${USERINFO.phone.value}`;
             const thChange = document.createElement('button');
             thChange.classList = 'table__change';
             thChange.textContent = 'Change';
